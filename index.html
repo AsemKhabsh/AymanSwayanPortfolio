@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="بورتفوليو احترافي - مصمم ومطور مبدع">
+    <meta name="keywords" content="portfolio, designer, developer, creative, بورتفوليو, مصمم, مطور">
+    <title>Portfolio | بورتفوليو احترافي</title>
+
+    <!-- Google Fonts - Rubik -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <span class="loader-text">جاري التحميل...</span>
+        </div>
+    </div>
+
+    <!-- Cursor Effect -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#home" class="logo">
+                <span class="logo-text">Portfolio</span>
+                <span class="logo-dot"></span>
+            </a>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-link active">الرئيسية</a></li>
+                <li><a href="#about" class="nav-link">من أنا</a></li>
+                <li><a href="#services" class="nav-link">خدماتي</a></li>
+                <li><a href="#portfolio" class="nav-link">أعمالي</a></li>
+                <li><a href="#contact" class="nav-link">تواصل معي</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="تبديل الوضع">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="القائمة">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-particles" id="particles"></div>
+            <div class="hero-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-sparkles"></i>
+                    <span>مرحباً بك في عالمي الإبداعي</span>
+                </div>
+
+                <h1 class="hero-title">
+                    <span class="greeting">أهلاً، أنا</span>
+                    <span class="name">عبدالرحمن</span>
+                    <span class="title-line">
+                        <span class="typed-text" id="typed-text"></span>
+                        <span class="cursor-blink">|</span>
+                    </span>
+                </h1>
+
+                <p class="hero-description">
+                    أحول أفكارك إلى تصاميم إبداعية تترك انطباعاً لا يُنسى. متخصص في التصميم الجرافيكي،
+                    الموشن جرافيك، المونتاج الاحترافي، وتطوير المواقع.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">
+                        <span>شاهد أعمالي</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <span>تواصل معي</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="150">0</span>
+                        <span class="stat-label">مشروع مكتمل</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="50">0</span>
+                        <span class="stat-label">عميل سعيد</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="14">0</span>
+                        <span class="stat-label">سنوات خبرة</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <div class="image-glow"></div>
+                    <div class="image-border"></div>
+                    <div class="profile-image">
+                        <img src="assets/images/image.png" alt="عبدالرحمن - مصمم ومطور محترف">
+                    </div>
+                </div>
+                <div class="floating-badge badge-1">
+                    <i class="fas fa-palette"></i>
+                    <span>مصمم جرافيك</span>
+                </div>
+                <div class="floating-badge badge-2">
+                    <i class="fas fa-code"></i>
+                    <span>مطور ويب</span>
+                </div>
+                <div class="floating-badge badge-3">
+                    <i class="fas fa-video"></i>
+                    <span>منتج فيديو</span>
+                </div>
+            </div>
+        </div>
+
+        <a href="#about" class="scroll-indicator">
+            <span>اكتشف المزيد</span>
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">تعرف علي</span>
+                <h2 class="section-title">من أنا</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-card">
+                        <div class="card-glow"></div>
+                        <div class="about-profile-image">
+                            <img src="assets/images/image.png" alt="عبدالرحمن">
+                        </div>
+                    </div>
+                    <div class="experience-badge">
+                        <span class="exp-number">+14</span>
+                        <span class="exp-text">سنوات خبرة</span>
+                    </div>
+                </div>
+
+                <div class="about-text">
+                    <h3 class="about-subtitle">Senior Graphic Designer</h3>
+                    <p class="about-description">
+                        خبرة عمل في مجال التصميم 14 عام، وخبرة عمل في مجال التدريب 8 أعوام.
+                    </p>
+                    <p class="about-description">
+                        قمت بالعمل لدى العديد من الجهات الحكومية والخاصة.
+                    </p>
+
+                    <div class="about-info">
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>[EMAIL_ADDRESS]</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+966501199570</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-location-dot"></i>
+                            <span>المملكة العربية السعودية</span>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="btn btn-primary">
+                        <span>دعنا نعمل معاً</span>
+                        <i class="fas fa-handshake"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">ماذا أقدم</span>
+                <h2 class="section-title">خدماتي</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="service-title">التصميم الجرافيكي</h3>
+                    <p class="service-description">
+                        تصميم هويات بصرية، شعارات، بروشورات، ومواد تسويقية احترافية تعكس هوية علامتك التجارية.
+                    </p>
+                    <a href="#portfolio" class="service-link">
+                        <span>عرض الأعمال</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="service-title">المونتاج الإعلاني</h3>
+                    <p class="service-description">
+                        إنتاج فيديوهات إعلانية احترافية، تحرير وقص الفيديو، وإضافة تأثيرات بصرية مميزة.
+                    </p>
+                    <a href="#portfolio" class="service-link">
+                        <span>عرض الأعمال</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3 class="service-title">الموشن جرافيك</h3>
+                    <p class="service-description">
+                        إنشاء رسوم متحركة جذابة، فيديوهات توضيحية، وإنفوجرافيك متحرك يوصل رسالتك بفعالية.
+                    </p>
+                    <a href="#portfolio" class="service-link">
+                        <span>عرض الأعمال</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3 class="service-title">التصوير الفوتوغرافي</h3>
+                    <p class="service-description">
+                        التقاط صور احترافية للمنتجات والفعاليات، مع معالجة وتحرير الصور بجودة عالية.
+                    </p>
+                    <a href="#portfolio" class="service-link">
+                        <span>عرض الأعمال</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="service-title">تطوير المواقع</h3>
+                    <p class="service-description">
+                        تصميم وتطوير مواقع ويب حديثة ومتجاوبة، مع واجهات مستخدم جذابة وتجربة مستخدم سلسة.
+                    </p>
+                    <a href="#portfolio" class="service-link">
+                        <span>عرض الأعمال</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-screen"></i>
+                    </div>
+                    <h3 class="service-title">تطوير التطبيقات</h3>
+                    <p class="service-description">
+                        بناء تطبيقات جوال متميزة لمنصات Android و iOS بتصميم عصري وأداء متميز.
+                    </p>
+                    <a href="#portfolio" class="service-link">
+                        <span>عرض الأعمال</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio section" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">معرض الأعمال</span>
+                <h2 class="section-title">أعمالي</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="graphic">تصميم جرافيك</button>
+                <button class="filter-btn" data-filter="video">مونتاج</button>
+                <button class="filter-btn" data-filter="motion">موشن جرافيك</button>
+                <button class="filter-btn" data-filter="web">مواقع</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="graphic">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <div class="image-placeholder gradient-1">
+                                <i class="fas fa-image"></i>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h4>تصميم هوية بصرية</h4>
+                                    <p>تصميم جرافيك</p>
+                                    <div class="overlay-buttons">
+                                        <a href="#" class="overlay-btn"><i class="fas fa-eye"></i></a>
+                                        <a href="#" class="overlay-btn"><i class="fas fa-link"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="video">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <div class="image-placeholder gradient-2">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h4>إعلان تجاري</h4>
+                                    <p>مونتاج فيديو</p>
+                                    <div class="overlay-buttons">
+                                        <a href="#" class="overlay-btn"><i class="fas fa-eye"></i></a>
+                                        <a href="#" class="overlay-btn"><i class="fas fa-link"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="motion">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <div class="image-placeholder gradient-3">
+                                <i class="fas fa-film"></i>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h4>فيديو توضيحي</h4>
+                                    <p>موشن جرافيك</p>
+                                    <div class="overlay-buttons">
+                                        <a href="#" class="overlay-btn"><i class="fas fa-eye"></i></a>
+                                        <a href="#" class="overlay-btn"><i class="fas fa-link"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <div class="image-placeholder gradient-4">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h4>موقع شركة</h4>
+                                    <p>تطوير ويب</p>
+                                    <div class="overlay-buttons">
+                                        <a href="#" class="overlay-btn"><i class="fas fa-eye"></i></a>
+                                        <a href="#" class="overlay-btn"><i class="fas fa-link"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="graphic">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <div class="image-placeholder gradient-5">
+                                <i class="fas fa-pen-nib"></i>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h4>تصميم شعار</h4>
+                                    <p>تصميم جرافيك</p>
+                                    <div class="overlay-buttons">
+                                        <a href="#" class="overlay-btn"><i class="fas fa-eye"></i></a>
+                                        <a href="#" class="overlay-btn"><i class="fas fa-link"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="video">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <div class="image-placeholder gradient-6">
+                                <i class="fas fa-clapperboard"></i>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h4>فيديو ترويجي</h4>
+                                    <p>مونتاج فيديو</p>
+                                    <div class="overlay-buttons">
+                                        <a href="#" class="overlay-btn"><i class="fas fa-eye"></i></a>
+                                        <a href="#" class="overlay-btn"><i class="fas fa-link"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-cta">
+                <a href="#" class="btn btn-outline">
+                    <span>عرض المزيد</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">تواصل</span>
+                <h2 class="section-title">تواصل معي</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="contact-content contact-simple">
+                <h3>دعنا نعمل معاً</h3>
+                <p>هل لديك مشروع تريد تنفيذه؟ تواصل معي وسأكون سعيداً بمساعدتك.</p>
+
+                <div class="contact-buttons">
+                    <a href="mailto:[EMAIL_ADDRESS]" class="btn btn-primary btn-lg">
+                        <i class="fas fa-envelope"></i>
+                        <span>راسلني عبر الإيميل</span>
+                    </a>
+                    <a href="https://wa.me/+966501199570" target="_blank" class="btn btn-whatsapp btn-lg">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>تواصل عبر واتساب</span>
+                    </a>
+                </div>
+
+                <div class="social-links social-links-large">
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                    <a href="#" class="social-link" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#home" class="logo">
+                        <span class="logo-text">Portfolio</span>
+                        <span class="logo-dot"></span>
+                    </a>
+                    <p>أحول أفكارك إلى واقع إبداعي</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#about">من أنا</a></li>
+                        <li><a href="#services">خدماتي</a></li>
+                        <li><a href="#portfolio">أعمالي</a></li>
+                        <li><a href="#contact">تواصل معي</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social">
+                    <h4>تابعني</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 جميع الحقوق محفوظة. </p>
+                <p>صُنع بـ <i class="fas fa-heart"></i> بواسطة عاصم خبش</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="العودة للأعلى">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
