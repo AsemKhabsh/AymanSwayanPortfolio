@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCounterAnimation();
     initScrollAnimations();
     initPortfolioFilter();
+    initFlipCards();
     initSkillBars();
     initBackToTop();
     initCursorEffect();
@@ -287,6 +288,25 @@ function initPortfolioFilter() {
                     item.classList.add('hidden');
                 }
             });
+        });
+    });
+}
+
+/* ============================================
+   FLIP SERVICE CARDS
+   ============================================ */
+function initFlipCards() {
+    const flipCards = document.querySelectorAll('.service-card-flip');
+
+    if (!flipCards.length) return;
+
+    flipCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            // Prevent clicks on links from triggering flip
+            if (e.target.closest('a')) return;
+
+            // Toggle flipped state
+            card.classList.toggle('flipped');
         });
     });
 }
