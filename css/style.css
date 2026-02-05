@@ -1484,50 +1484,37 @@ textarea {
     line-height: 1.8;
 }
 
+/* ============================================
+   CLIENTS MARQUEE - SIMPLE INFINITE SCROLL
+   ============================================ */
 .clients-marquee-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xl);
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.03) 0%, rgba(var(--secondary-rgb), 0.03) 100%);
+    border: 2px solid rgba(var(--primary-rgb), 0.15);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
 }
 
 .clients-marquee {
-    position: relative;
-    overflow: hidden;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-xl);
-    padding: var(--spacing-lg) 0;
     width: 100%;
+    overflow: hidden;
 }
 
 .clients-marquee-track {
-    display: inline-flex;
+    display: flex;
+    flex-direction: row-reverse;
     gap: 2rem;
-    white-space: nowrap;
-    animation: scroll-left 40s linear infinite;
+    width: max-content;
+    animation: scrollMarquee 30s linear infinite;
 }
 
-.clients-marquee-reverse .clients-marquee-track {
-    animation: scroll-right 40s linear infinite;
-}
-
-@keyframes scroll-left {
-    0% {
+@keyframes scrollMarquee {
+    from {
         transform: translateX(0);
     }
 
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-@keyframes scroll-right {
-    0% {
-        transform: translateX(-50%);
-    }
-
-    100% {
-        transform: translateX(0);
+    to {
+        transform: translateX(50%);
     }
 }
 
@@ -1537,39 +1524,21 @@ textarea {
 
 .client-logo {
     flex-shrink: 0;
-    width: 120px;
-    height: 120px;
-    min-width: 120px;
-    min-height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    border: none;
-    padding: var(--spacing-md);
-    cursor: pointer;
-    transition: transform var(--transition-normal);
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
 .client-logo:hover {
-    transform: scale(1.15);
-}
-
-.client-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: transform var(--transition-normal);
+    transform: scale(1.2);
 }
 
 /* Responsive - smaller logos on mobile */
 @media (max-width: 768px) {
     .client-logo {
-        width: 70px;
-        height: 70px;
-        min-width: 70px;
-        min-height: 70px;
-        padding: var(--spacing-sm);
+        width: 60px;
+        height: 60px;
     }
 
     .clients-marquee-track {

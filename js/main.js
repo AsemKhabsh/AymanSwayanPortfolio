@@ -725,14 +725,62 @@ function initClientsLightbox() {
 }
 
 /* ============================================
-   CLIENTS MARQUEE - DUPLICATE FOR SEAMLESS LOOP
+   CLIENTS MARQUEE - JAVASCRIPT CONTROLLED ANIMATION
    ============================================ */
 function initClientsMarquee() {
-    const tracks = document.querySelectorAll('.clients-marquee-track');
+    // Wait for all images to load before starting animation
+    window.addEventListener('load', () => {
+        const marquees = document.querySelectorAll('.clients-marquee');
 
-    tracks.forEach(track => {
-        // Clone the entire track content once for seamless loop
-        const content = track.innerHTML;
-        track.innerHTML = content + content;
+        marquees.forEach((marquee) => {
+            const track = marquee.querySelector('.clients-marquee-track');
+            if (!track) return;
+
+            // Clone all logos to create seamless loop
+            const logos = Array.from(track.children);
+            logos.forEach(logo => {
+                const clone = logo.cloneNode(true);
+                track.appendChild(clone);
+            });
+
+            // Calculate the actual width of original content
+            // After cloning, track has double the logos, so we need half
+            const trackWidth = track.scrollWidth;
+            const halfWidth = trackWidth / 2;
+
+            // Animation variables
+            let position = 0;
+            const isReverse = marquee.classList.contains('clients-marquee-reverse');
+            const speed = isReverse ? 1 : -1;
+            let isPaused = false;
+
+            // For reverse, start from -halfWidth
+            if (isReverse) {
+                position = -halfWidth;
+            }
+
+            // Pause on hover
+            marquee.addEventListener('mouseenter', () => isPaused = true);
+            marquee.addEventListener('mouseleave', () => isPaused = false);
+
+            function animate() {
+                if (!isPaused) {
+                    position += speed;
+
+                    // Reset position for seamless loop
+                    if (!isReverse && position <= -halfWidth) {
+                        position = 0;
+                    } else if (isReverse && position >= 0) {
+                        position = -halfWidth;
+                    }
+
+                    track.style.transform = `translateX(${position}px)`;
+                }
+                requestAnimationFrame(animate);
+            }
+
+            // Start animation
+            animate();
+        });
     });
 }
