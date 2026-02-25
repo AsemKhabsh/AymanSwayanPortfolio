@@ -2869,6 +2869,12 @@ textarea {
         text-align: center;
     }
 
+    .footer-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .footer-brand p {
         margin-left: auto;
         margin-right: auto;
@@ -2968,9 +2974,9 @@ textarea {
    TEAM SERVICES CARDS
    ============================================ */
 .team-services-grid {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-2xl);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
 }
 
 .team-service-card {
@@ -3005,10 +3011,15 @@ textarea {
 }
 
 .team-service-content {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: var(--spacing-xl);
-    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+}
+
+.team-service-content>.btn {
+    width: 100%;
+    justify-content: center;
 }
 
 .team-video-wrapper {
@@ -3193,49 +3204,16 @@ textarea {
 
 /* Responsive - Team Service Cards */
 @media (max-width: 991px) {
-    .team-service-content {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        text-align: center;
-    }
-
-    .team-video-wrapper {
-        aspect-ratio: 16/9;
-        max-height: 300px;
-        max-width: 500px;
-        width: 100%;
-    }
-
-    .team-details {
-        max-width: 600px;
-        width: 100%;
-    }
-
-    .team-leader {
-        justify-content: center;
-    }
-
-    .team-experience {
-        justify-content: center;
-        text-align: center;
-    }
-
-    .team-skills {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .team-skills ul {
-        align-items: center;
-    }
-
-    .team-skills ul li {
-        text-align: right;
+    .team-services-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
+    .team-services-grid {
+        grid-template-columns: 1fr;
+    }
+
     .team-service-title {
         font-size: 1.25rem;
         padding: var(--spacing-lg);
@@ -3246,8 +3224,8 @@ textarea {
     }
 
     .team-service-content {
-        padding: var(--spacing-lg);
-        gap: var(--spacing-lg);
+        padding: var(--spacing-md);
+        gap: var(--spacing-md);
     }
 
     .team-video-wrapper {
