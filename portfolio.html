@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="معرض أعمال أيمن سويان - تصميم جرافيكي، مونتاج، موشن جرافيك، مواقع إلكترونية، تصوير">
+    <meta name="keywords" content="أعمال, بورتفوليو, تصميم, مونتاج, موشن جرافيك, مواقع, تصوير">
+    <title>معرض الأعمال | أيمن سويان</title>
+
+    <!-- Google Fonts - Rubik -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <span class="loader-text">جاري التحميل...</span>
+        </div>
+    </div>
+
+    <!-- Cursor Effect -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="أيمن سويان" class="logo-img">
+            </a>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="nav-link">الرئيسية</a></li>
+                <li><a href="index.html#about" class="nav-link">من أنا</a></li>
+                <li><a href="services.html" class="nav-link">خدمات الفريق</a></li>
+                <li><a href="portfolio.html" class="nav-link active">أعمالي</a></li>
+                <li><a href="index.html#contact" class="nav-link">تواصل معي</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="تبديل الوضع">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="القائمة">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <a href="index.html" class="back-link">
+                    <i class="fas fa-arrow-right"></i>
+                    <span>العودة للرئيسية</span>
+                </a>
+                <h1 class="page-title">معرض الأعمال</h1>
+                <p class="page-description">نظرة على مشاريعنا وإبداعاتنا في مختلف المجالات — التصميم، المونتاج، الموشن
+                    جرافيك، المواقع والتصوير</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery Section -->
+    <section class="portfolio-page section" id="portfolio-gallery">
+        <div class="container">
+
+            <!-- Filter Buttons -->
+            <div class="portfolio-filter-bar">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th-large"></i>
+                    <span>جميع الأعمال</span>
+                </button>
+                <button class="filter-btn" data-filter="design">
+                    <i class="fas fa-palette"></i>
+                    <span>التصميم</span>
+                </button>
+                <button class="filter-btn" data-filter="montage">
+                    <i class="fas fa-video"></i>
+                    <span>المونتاج</span>
+                </button>
+                <button class="filter-btn" data-filter="motion">
+                    <i class="fas fa-film"></i>
+                    <span>الموشن جرافيك</span>
+                </button>
+                <button class="filter-btn" data-filter="websites">
+                    <i class="fas fa-globe"></i>
+                    <span>المواقع</span>
+                </button>
+                <button class="filter-btn" data-filter="photography">
+                    <i class="fas fa-camera"></i>
+                    <span>التصوير</span>
+                </button>
+            </div>
+
+            <!-- Portfolio Items Grid -->
+            <div class="portfolio-gallery-grid">
+
+                <!-- ========== التصميم الجرافيكي ========== -->
+                <div class="portfolio-item" data-category="design">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-image gradient-design-1">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="portfolio-item-overlay">
+                            <span class="portfolio-item-category">التصميم الجرافيكي</span>
+                            <h3 class="portfolio-item-title">هوية بصرية متكاملة</h3>
+                            <p class="portfolio-item-desc">تصميم هوية بصرية شاملة لشركة تقنية — شعار، ألوان، ومحتوى
+                                تسويقي</p>
+                            <div class="portfolio-item-tools">
+                                <span><i class="fas fa-paint-brush"></i> Illustrator</span>
+                                <span><i class="fas fa-layer-group"></i> Photoshop</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="design">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-image gradient-design-2">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="portfolio-item-overlay">
+                            <span class="portfolio-item-category">التصميم الجرافيكي</span>
+                            <h3 class="portfolio-item-title">تصميمات سوشيال ميديا</h3>
+                            <p class="portfolio-item-desc">مجموعة تصميمات احترافية لحملات إعلانية على منصات التواصل
+                                الاجتماعي</p>
+                            <div class="portfolio-item-tools">
+                                <span><i class="fas fa-layer-group"></i> Photoshop</span>
+                                <span><i class="fas fa-bezier-curve"></i> Illustrator</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="design">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-image gradient-design-3">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="portfolio-item-overlay">
+                            <span class="portfolio-item-category">التصميم الجرافيكي</span>
+                            <h3 class="portfolio-item-title">بروشورات وكتيبات</h3>
+                            <p class="portfolio-item-desc">تصميم بروشورات وكتيبات تسويقية بطريقة احترافية وعصرية</p>
+                            <div class="portfolio-item-tools">
+                                <span><i class="fas fa-file-pdf"></i> InDesign</span>
+                                <span><i class="fas fa-layer-group"></i> Photoshop</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="design">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-image gradient-design-4">
+                            <i class="fas fa-ad"></i>
+                        </div>
+                        <div class="portfolio-item-overlay">
+                            <span class="portfolio-item-category">التصميم الجرافيكي</span>
+                            <h3 class="portfolio-item-title">تصميمات إعلانية</h3>
+                            <p class="portfolio-item-desc">تصميمات إعلانية مبتكرة لحملات دعائية ومناسبات خاصة</p>
+                            <div class="portfolio-item-tools">
+                                <span><i class="fas fa-layer-group"></i> Photoshop</span>
+                                <span><i class="fas fa-paint-brush"></i> Illustrator</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="design">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-image gradient-design-5">
+                            <i class="fas fa-object-group"></i>
+                        </div>
+                        <div class="portfolio-item-overlay">
+                            <span class="portfolio-item-category">التصميم الجرافيكي</span>
+                            <h3 class="portfolio-item-title">شعارات احترافية</h3>
+                            <p class="portfolio-item-desc">مجموعة شعارات مبتكرة لمختلف القطاعات — شركات، مطاعم، وجهات
+                                حكومية</p>
+                            <div class="portfolio-item-tools">
+                                <span><i class="fas fa-bezier-curve"></i> Illustrator</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== المونتاج ========== -->
+                <div class="portfolio-item" data-category="montage">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-image gradient-montage-1">
+                            <i class="fas fa-clapperboard"></i>
+                        </div>
+                        <div class="portfolio-item-overlay">
+                            <span class="portfolio-item-category">المونتاج</span>
+                            <h3 class="portfolio-item-title">إعلان تجاري ترويجي</h3>
+                            <p class="portfolio-item-desc">مونتاج فيديو إعلاني لمنتج تقني مع تأثيرات بصرية احترافية</p>
+                            <div class="portfolio-item-tools">
+                                <span><i class="fas fa-film"></i> Premiere Pro</span>
+                                <span><i class="fas fa-magic"></i> After Effects</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="montage">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-image gradient-montage-2">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <div class="portfolio-item-overlay">
+                            <span class="portfolio-item-category">المونتاج</span>
+                            <h3 class="portfolio-item-title">فيديو تسويقي للسوشيال</h3>
+                            <p class="portfolio-item-desc">مونتاج مقاطع قصيرة لحملات سوشيال ميديا بأسلوب سريع وجذاب</p>
+                            <div class="portfolio-item-tools">
+                                <span><i class="fas fa-film"></i> Premiere Pro</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="montage">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-image gradient-montage-3">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="portfolio-item-overlay">
+                            <span class="portfolio-item-category">المونتاج</span>
+                            <h3 class="portfolio-item-title">تغطية فعالية رسمية</h3>
+                            <p class="portfolio-item-desc">مونتاج احترافي لفعالية حكومية مع مقابلات ولقطات مميزة</p>
+                            <div class="portfolio-item-tools">
+                                <span><i class="fas fa-film"></i> Premiere Pro</span>
+                                <span><i class="fas fa-music"></i> Audition</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="montage">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-image gradient-montage-4">
+                            <i class="fas fa-tv"></i>
+                        </div>
+                        <div class="portfolio-item-overlay">
+                            <span class="portfolio-item-category">المونتاج</span>
+                            <h3 class="portfolio-item-title">فيديو مؤسسي تعريفي</h3>
+                            <p class="portfolio-item-desc">فيديو تعريفي لشركة يستعرض خدماتها وفريق عملها</p>
+                            <div class="portfolio-item-tools">
+                                <span><i class="fas fa-film"></i> Premiere Pro</span>
+                                <span><i class="fas fa-magic"></i> After Effects</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="montage">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-image gradient-montage-5">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <div class="portfolio-item-overlay">
+                            <span class="portfolio-item-category">المونتاج</span>
+                            <h3 class="portfolio-item-title">حملة إعلانية متكاملة</h3>
+                            <p class="portfolio-item-desc">سلسلة فيديوهات إعلانية لحملة تسويقية متكاملة على عدة منصات
+                            </p>
+                            <div class="portfolio-item-tools">
+                                <span><i class="fas fa-film"></i> Premiere Pro</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== الموشن جرافيك ========== -->
+                <div class="portfolio-item" data-category="motion">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-image gradient-motion-1">
+                            <i class="fas fa-wand-magic-sparkles"></i>
+                        </div>
+                        <div class="portfolio-item-overlay">
+                            <span class="portfolio-item-category">الموشن جرافيك</span>
+                            <h3 class="portfolio-item-title">فيديو توضيحي لتطبيق</h3>
+                            <p class="portfolio-item-desc">رسوم متحركة توضيحية لمميزات تطبيق جوال بأسلوب عصري</p>
+                            <div class="portfolio-item-tools">
+                                <span><i class="fas fa-magic"></i> After Effects</span>
+                                <span><i class="fas fa-bezier-curve"></i> Illustrator</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="motion">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-image gradient-motion-2">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="portfolio-item-overlay">
+                            <span class="portfolio-item-category">الموشن جرافيك</span>
+                            <h3 class="portfolio-item-title">إنفوجرافيك متحرك</h3>
+                            <p class="portfolio-item-desc">تحويل بيانات وإحصائيات إلى رسوم بيانية متحركة جذابة</p>
+                            <div class="portfolio-item-tools">
+                                <span><i class="fas fa-magic"></i> After Effects</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="motion">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-image gradient-motion-3">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="portfolio-item-overlay">
+                            <span class="portfolio-item-category">الموشن جرافيك</span>
+                            <h3 class="portfolio-item-title">هوية متحركة (Intro)</h3>
+                            <p class="portfolio-item-desc">تصميم مقدمة أنيميشن احترافية لشعار وهوية علامة تجارية</p>
+                            <div class="portfolio-item-tools">
+                                <span><i class="fas fa-magic"></i> After Effects</span>
+                                <span><i class="fas fa-cube"></i> Cinema 4D</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="motion">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-image gradient-motion-4">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="portfolio-item-overlay">
+                            <span class="portfolio-item-category">الموشن جرافيك</span>
+                            <h3 class="portfolio-item-title">فيديو تعليمي متحرك</h3>
+                            <p class="portfolio-item-desc">شرح مفهوم معقد من خلال رسوم متحركة مبسطة ومحتوى تعليمي</p>
+                            <div class="portfolio-item-tools">
+                                <span><i class="fas fa-magic"></i> After Effects</span>
+                                <span><i class="fas fa-bezier-curve"></i> Illustrator</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="motion">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-image gradient-motion-5">
+                            <i class="fas fa-hashtag"></i>
+                        </div>
+                        <div class="portfolio-item-overlay">
+                            <span class="portfolio-item-category">الموشن جرافيك</span>
+                            <h3 class="portfolio-item-title">إعلان سوشيال موشن</h3>
+                            <p class="portfolio-item-desc">إعلانات متحركة قصيرة لمنصات التواصل الاجتماعي بتأثيرات مبتكرة
+                            </p>
+                            <div class="portfolio-item-tools">
+                                <span><i class="fas fa-magic"></i> After Effects</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== المواقع الإلكترونية ========== -->
+                <div class="portfolio-item" data-category="websites">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-image gradient-web-1">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="portfolio-item-overlay">
+                            <span class="portfolio-item-category">المواقع الإلكترونية</span>
+                            <h3 class="portfolio-item-title">موقع شركة استشارات</h3>
+                            <p class="portfolio-item-desc">تصميم وتطوير موقع عصري لشركة استشارات مع لوحة تحكم</p>
+                            <div class="portfolio-item-tools">
+                                <span><i class="fab fa-react"></i> React</span>
+                                <span><i class="fab fa-node-js"></i> Node.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="websites">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-image gradient-web-2">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <div class="portfolio-item-overlay">
+                            <span class="portfolio-item-category">المواقع الإلكترونية</span>
+                            <h3 class="portfolio-item-title">متجر إلكتروني</h3>
+                            <p class="portfolio-item-desc">متجر إلكتروني متكامل مع نظام سلة مشتريات وبوابة دفع</p>
+                            <div class="portfolio-item-tools">
+                                <span><i class="fab fa-wordpress"></i> WordPress</span>
+                                <span><i class="fas fa-shopping-cart"></i> WooCommerce</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="websites">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-image gradient-web-3">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="portfolio-item-overlay">
+                            <span class="portfolio-item-category">المواقع الإلكترونية</span>
+                            <h3 class="portfolio-item-title">بورتفوليو شخصي</h3>
+                            <p class="portfolio-item-desc">موقع بورتفوليو احترافي بتصميم عصري وأنيميشن تفاعلي</p>
+                            <div class="portfolio-item-tools">
+                                <span><i class="fab fa-html5"></i> HTML/CSS</span>
+                                <span><i class="fab fa-js-square"></i> JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="websites">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-image gradient-web-4">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="portfolio-item-overlay">
+                            <span class="portfolio-item-category">المواقع الإلكترونية</span>
+                            <h3 class="portfolio-item-title">لوحة تحكم - Dashboard</h3>
+                            <p class="portfolio-item-desc">لوحة تحكم تفاعلية لإدارة البيانات والتقارير</p>
+                            <div class="portfolio-item-tools">
+                                <span><i class="fab fa-react"></i> React</span>
+                                <span><i class="fas fa-database"></i> Firebase</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="websites">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-image gradient-web-5">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="portfolio-item-overlay">
+                            <span class="portfolio-item-category">المواقع الإلكترونية</span>
+                            <h3 class="portfolio-item-title">تقرير سنوي تفاعلي</h3>
+                            <p class="portfolio-item-desc">تقرير سنوي رقمي تفاعلي مع رسوم بيانية وإحصائيات متحركة</p>
+                            <div class="portfolio-item-tools">
+                                <span><i class="fab fa-html5"></i> HTML/CSS</span>
+                                <span><i class="fab fa-js-square"></i> JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========== التصوير ========== -->
+                <div class="portfolio-item" data-category="photography">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-image gradient-photo-1">
+                            <i class="fas fa-box-open"></i>
+                        </div>
+                        <div class="portfolio-item-overlay">
+                            <span class="portfolio-item-category">التصوير</span>
+                            <h3 class="portfolio-item-title">تصوير منتجات تجارية</h3>
+                            <p class="portfolio-item-desc">جلسة تصوير احترافية لمنتجات تجارية بإضاءة استوديو</p>
+                            <div class="portfolio-item-tools">
+                                <span><i class="fas fa-camera"></i> Canon EOS</span>
+                                <span><i class="fas fa-lightbulb"></i> Studio Light</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="photography">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-image gradient-photo-2">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="portfolio-item-overlay">
+                            <span class="portfolio-item-category">التصوير</span>
+                            <h3 class="portfolio-item-title">تغطية مؤتمر رسمي</h3>
+                            <p class="portfolio-item-desc">تغطية تصويرية شاملة لمؤتمر حكومي رسمي</p>
+                            <div class="portfolio-item-tools">
+                                <span><i class="fas fa-camera"></i> Sony A7</span>
+                                <span><i class="fas fa-image"></i> Lightroom</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="photography">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-image gradient-photo-3">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="portfolio-item-overlay">
+                            <span class="portfolio-item-category">التصوير</span>
+                            <h3 class="portfolio-item-title">تصوير أطعمة ومطاعم</h3>
+                            <p class="portfolio-item-desc">تصوير احترافي لأطباق ومطاعم مع ستايلنج طعام</p>
+                            <div class="portfolio-item-tools">
+                                <span><i class="fas fa-camera"></i> Nikon</span>
+                                <span><i class="fas fa-lightbulb"></i> Softbox</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="photography">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-image gradient-photo-4">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="portfolio-item-overlay">
+                            <span class="portfolio-item-category">التصوير</span>
+                            <h3 class="portfolio-item-title">تصوير معماري</h3>
+                            <p class="portfolio-item-desc">التقاط صور احترافية لمشاريع معمارية وتصميم داخلي</p>
+                            <div class="portfolio-item-tools">
+                                <span><i class="fas fa-camera"></i> Wide Angle</span>
+                                <span><i class="fas fa-image"></i> Lightroom</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="photography">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-item-image gradient-photo-5">
+                            <i class="fas fa-portrait"></i>
+                        </div>
+                        <div class="portfolio-item-overlay">
+                            <span class="portfolio-item-category">التصوير</span>
+                            <h3 class="portfolio-item-title">صور بورتريه احترافية</h3>
+                            <p class="portfolio-item-desc">جلسات تصوير بورتريه شخصية واحترافية بأسلوب سينمائي</p>
+                            <div class="portfolio-item-tools">
+                                <span><i class="fas fa-camera"></i> 85mm Lens</span>
+                                <span><i class="fas fa-image"></i> Photoshop</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="portfolio-stats-bar">
+                <div class="portfolio-stat">
+                    <span class="portfolio-stat-number">1382+</span>
+                    <span class="portfolio-stat-label">تصميم</span>
+                </div>
+                <div class="portfolio-stat">
+                    <span class="portfolio-stat-number">416+</span>
+                    <span class="portfolio-stat-label">فيديو</span>
+                </div>
+                <div class="portfolio-stat">
+                    <span class="portfolio-stat-number">200+</span>
+                    <span class="portfolio-stat-label">موشن</span>
+                </div>
+                <div class="portfolio-stat">
+                    <span class="portfolio-stat-number">50+</span>
+                    <span class="portfolio-stat-label">موقع</span>
+                </div>
+                <div class="portfolio-stat">
+                    <span class="portfolio-stat-number">300+</span>
+                    <span class="portfolio-stat-label">صورة</span>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="services-cta">
+                <h3>هل أعجبتك أعمالنا؟</h3>
+                <p>تواصل معنا الآن لتحويل فكرتك إلى واقع إبداعي</p>
+                <a href="index.html#contact" class="btn btn-primary btn-lg">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>تواصل معنا</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="assets/images/logo.png" alt="أيمن سويان" class="logo-img">
+                    </a>
+                    <p>نحول أفكارك إلى واقع إبداعي</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="index.html#about">من أنا</a></li>
+                        <li><a href="services.html">خدمات الفريق</a></li>
+                        <li><a href="portfolio.html">أعمالي</a></li>
+                        <li><a href="index.html#contact">تواصل معي</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="العودة للأعلى">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+
+    <!-- Portfolio Filter Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+            // Check URL for category parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const categoryParam = urlParams.get('category');
+
+            if (categoryParam) {
+                // Activate the matching filter button
+                filterBtns.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.dataset.filter === categoryParam) {
+                        btn.classList.add('active');
+                    }
+                });
+                filterItems(categoryParam);
+            }
+
+            // Filter button click
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const filter = btn.dataset.filter;
+                    filterItems(filter);
+
+                    // Update URL without reload
+                    if (filter === 'all') {
+                        history.replaceState(null, '', 'portfolio.html');
+                    } else {
+                        history.replaceState(null, '', `portfolio.html?category=${filter}`);
+                    }
+                });
+            });
+
+            function filterItems(filter) {
+                portfolioItems.forEach((item, index) => {
+                    const category = item.dataset.category;
+                    if (filter === 'all' || category === filter) {
+                        item.style.display = '';
+                        item.style.animation = `fadeInUp 0.5s ease ${index * 0.05}s both`;
+                    } else {
+                        item.style.display = 'none';
+                        item.style.animation = '';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
