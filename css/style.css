@@ -7,25 +7,25 @@
    CSS VARIABLES - DESIGN TOKENS
    ============================================ */
 :root {
-    /* Primary Colors - Bold Orange Brand Identity */
-    --primary: #E85C2E;
-    --primary-light: #FF7043;
-    --primary-dark: #C44A1F;
-    --secondary: #FF8A50;
-    --accent: #FFB74D;
-    --accent-light: #FFCC80;
+    /* Primary Colors - Bold Blue & Orange Brand Identity */
+    --primary: #1523CC;
+    --primary-light: #3D4CE6;
+    --primary-dark: #0E1899;
+    --secondary: #E86A3D;
+    --accent: #FF8A5C;
+    --accent-light: #FFB088;
 
-    /* Gradient Definitions - Orange/Warm Theme */
-    --gradient-primary: linear-gradient(135deg, #E85C2E 0%, #FF8A50 100%);
-    --gradient-secondary: linear-gradient(135deg, #FF7043 0%, #FFB74D 100%);
-    --gradient-accent: linear-gradient(135deg, #FFB74D 0%, #FFE082 100%);
+    /* Gradient Definitions - Blue/Orange Theme */
+    --gradient-primary: linear-gradient(135deg, #1523CC 0%, #3D4CE6 100%);
+    --gradient-secondary: linear-gradient(135deg, #E86A3D 0%, #FF8A5C 100%);
+    --gradient-accent: linear-gradient(135deg, #FF8A5C 0%, #FFB088 100%);
     --gradient-dark: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-    --gradient-glow: radial-gradient(circle, rgba(232, 92, 46, 0.4) 0%, transparent 70%);
+    --gradient-glow: radial-gradient(circle, rgba(21, 35, 204, 0.4) 0%, transparent 70%);
 
     /* Portfolio Gradients - Varied for Visual Interest */
-    --gradient-1: linear-gradient(135deg, #E85C2E 0%, #FF8A50 100%);
-    --gradient-2: linear-gradient(135deg, #FF7043 0%, #FFB74D 100%);
-    --gradient-3: linear-gradient(135deg, #FF5722 0%, #FF9800 100%);
+    --gradient-1: linear-gradient(135deg, #1523CC 0%, #3D4CE6 100%);
+    --gradient-2: linear-gradient(135deg, #E86A3D 0%, #FF8A5C 100%);
+    --gradient-3: linear-gradient(135deg, #1523CC 0%, #E86A3D 100%);
     --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
     --gradient-5: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
     --gradient-6: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -351,19 +351,18 @@ textarea {
     color: var(--text);
 }
 
-.logo-text {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.logo-img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+    transition: transform var(--transition-normal);
+    background: white;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
 }
 
-.logo-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--accent);
-    border-radius: 50%;
-    animation: pulse 2s infinite;
+.logo:hover .logo-img {
+    transform: scale(1.05);
 }
 
 @keyframes pulse {
@@ -566,9 +565,9 @@ textarea {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at 20% 50%, rgba(232, 92, 46, 0.2) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 138, 80, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 40% 80%, rgba(255, 183, 77, 0.1) 0%, transparent 50%);
+    background: radial-gradient(circle at 20% 50%, rgba(21, 35, 204, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(61, 76, 230, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(232, 106, 61, 0.1) 0%, transparent 50%);
     animation: gradientMove 20s ease infinite;
 }
 
@@ -774,7 +773,8 @@ textarea {
 .image-wrapper {
     position: relative;
     width: 350px;
-    height: 350px;
+    height: 400px;
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
 }
 
 .image-glow {
@@ -805,18 +805,27 @@ textarea {
 
 .image-border {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 2px dashed var(--glass-border);
-    animation: rotateBorder 30s linear infinite;
+    top: -4px;
+    left: -4px;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    background: var(--gradient-primary);
+    z-index: -1;
+    animation: borderPulse 3s ease-in-out infinite;
 }
 
-@keyframes rotateBorder {
-    to {
-        transform: rotate(360deg);
+@keyframes borderPulse {
+
+    0%,
+    100% {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.02);
     }
 }
 
@@ -825,7 +834,6 @@ textarea {
     width: 100%;
     height: 100%;
     background: var(--gradient-primary);
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -850,10 +858,8 @@ textarea {
     position: relative;
     width: 100%;
     height: 100%;
-    border-radius: 50%;
     overflow: hidden;
-    border: 4px solid var(--primary);
-    box-shadow: 0 0 40px rgba(232, 92, 46, 0.4);
+    box-shadow: 0 0 40px rgba(21, 35, 204, 0.3);
 }
 
 .profile-image img {
