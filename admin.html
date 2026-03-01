@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم | أيمن الصويان</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Admin Styles -->
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+    <!-- Loading -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Mobile Sidebar Toggle -->
+    <button class="sidebar-toggle" id="sidebarToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Dashboard Layout -->
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-shield-halved"></i>
+                </div>
+                <div class="sidebar-brand">
+                    <h2>لوحة التحكم</h2>
+                    <span>إدارة الموقع</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section-label">الأقسام الرئيسية</div>
+
+                <button class="sidebar-link active" data-section="hero">
+                    <i class="fas fa-home"></i>
+                    <span>الصفحة الرئيسية</span>
+                </button>
+
+                <button class="sidebar-link" data-section="about">
+                    <i class="fas fa-user"></i>
+                    <span>من أنا</span>
+                </button>
+
+                <button class="sidebar-link" data-section="portfolio">
+                    <i class="fas fa-images"></i>
+                    <span>الأعمال</span>
+                </button>
+
+                <button class="sidebar-link" data-section="services">
+                    <i class="fas fa-cogs"></i>
+                    <span>أقسام الخدمات</span>
+                </button>
+
+                <div class="nav-section-label">أخرى</div>
+
+                <button class="sidebar-link" data-section="clients">
+                    <i class="fas fa-handshake"></i>
+                    <span>شعارات العملاء</span>
+                </button>
+
+                <button class="sidebar-link" data-section="testimonials">
+                    <i class="fas fa-microphone"></i>
+                    <span>آراء العملاء</span>
+                </button>
+
+                <button class="sidebar-link" data-section="contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>معلومات التواصل</span>
+                </button>
+
+                <button class="sidebar-link" data-section="settings">
+                    <i class="fas fa-sliders"></i>
+                    <span>الإعدادات</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="sidebar-link" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>تسجيل الخروج</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <div class="topbar">
+                <div class="topbar-title">
+                    <h1 id="sectionTitle">الصفحة الرئيسية</h1>
+                    <p id="sectionDesc">إدارة محتوى قسم Hero</p>
+                </div>
+                <div class="topbar-actions">
+                    <button class="topbar-btn btn-theme" id="themeToggle" onclick="toggleAdminTheme()"
+                        title="تبديل الوضع">
+                        <i class="fas fa-sun" id="themeIcon"></i>
+                    </button>
+                    <a href="index.html" target="_blank" class="topbar-btn btn-preview">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>معاينة الموقع</span>
+                    </a>
+                    <button class="topbar-btn btn-save" id="saveBtn" onclick="saveCurrentSection()">
+                        <i class="fas fa-save"></i>
+                        <span>حفظ التغييرات</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="content-area">
+
+                <!-- ==================== HERO SECTION ==================== -->
+                <div class="section-panel active" id="panel-hero">
+                    <div class="admin-card">
+                        <h3><i class="fas fa-heading"></i> الاسم والوصف</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>الاسم الأول (يظهر في Hero)</label>
+                                <input type="text" id="heroName" placeholder="أيمن">
+                            </div>
+                            <div class="form-group">
+                                <label>الاسم الكامل</label>
+                                <input type="text" id="heroFullName" placeholder="أيمن الصويان">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>وصف Hero</label>
+                            <textarea id="heroDescription" rows="3"
+                                placeholder="الوصف المختصر الذي يظهر تحت الاسم..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="admin-card">
+                        <h3><i class="fas fa-keyboard"></i> نصوص Typing Effect</h3>
+                        <div class="tags-container" id="typingTextsContainer">
+                            <input type="text" class="tags-input" id="typingInput" placeholder="اكتب نص واضغط Enter...">
+                        </div>
+                        <small style="color: rgba(255,255,255,0.3); margin-top: 8px; display: block;">اضغط Enter بعد كل
+                            نص لإضافته</small>
+                    </div>
+
+                    <div class="admin-card">
+                        <h3><i class="fas fa-chart-bar"></i> الإحصائيات</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>عدد المشاريع</label>
+                                <input type="number" id="statProjects" placeholder="800">
+                            </div>
+                            <div class="form-group">
+                                <label>عدد العملاء</label>
+                                <input type="number" id="statClients" placeholder="170">
+                            </div>
+                            <div class="form-group">
+                                <label>سنوات الخبرة</label>
+                                <input type="number" id="statYears" placeholder="10">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="admin-card">
+                        <h3><i class="fas fa-camera"></i> صورة البروفايل</h3>
+                        <div class="image-upload" id="heroImageUpload">
+                            <img class="preview-img" id="heroImagePreview" style="display:none;">
+                            <i class="fas fa-cloud-upload-alt" id="heroUploadIcon"></i>
+                            <p>اسحب الصورة هنا أو اضغط للاختيار</p>
+                            <small>PNG, JPG, WEBP - حد أقصى 5MB</small>
+                            <input type="file" accept="image/*" id="heroImageInput">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== ABOUT SECTION ==================== -->
+                <div class="section-panel" id="panel-about">
+                    <div class="admin-card">
+                        <h3><i class="fas fa-info-circle"></i> معلومات "من أنا"</h3>
+                        <div class="form-group" style="margin-bottom:20px;">
+                            <label>العنوان الفرعي (بالإنجليزي)</label>
+                            <input type="text" id="aboutSubtitle" placeholder="Creative Director | Brand Designer">
+                        </div>
+                        <div class="form-group" style="margin-bottom:20px;">
+                            <label>الفقرة الأولى</label>
+                            <textarea id="aboutDesc1" rows="3" placeholder="الفقرة الأولى..."></textarea>
+                        </div>
+                        <div class="form-group" style="margin-bottom:20px;">
+                            <label>الفقرة الثانية</label>
+                            <textarea id="aboutDesc2" rows="3" placeholder="الفقرة الثانية..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>الفقرة الثالثة</label>
+                            <textarea id="aboutDesc3" rows="3" placeholder="الفقرة الثالثة..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="admin-card">
+                        <h3><i class="fas fa-camera"></i> صورة القسم</h3>
+                        <div class="image-upload" id="aboutImageUpload">
+                            <img class="preview-img" id="aboutImagePreview" style="display:none;">
+                            <i class="fas fa-cloud-upload-alt" id="aboutUploadIcon"></i>
+                            <p>اسحب الصورة هنا أو اضغط للاختيار</p>
+                            <small>PNG, JPG, WEBP - حد أقصى 5MB</small>
+                            <input type="file" accept="image/*" id="aboutImageInput">
+                        </div>
+                    </div>
+
+                    <div class="admin-card">
+                        <h3><i class="fas fa-address-card"></i> معلومات التواصل (في About)</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>البريد الإلكتروني</label>
+                                <input type="email" id="aboutEmail" placeholder="email@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label>رقم الجوال</label>
+                                <input type="tel" id="aboutPhone" placeholder="+966533318875">
+                            </div>
+                            <div class="form-group">
+                                <label>الموقع</label>
+                                <input type="text" id="aboutLocation" placeholder="المملكة العربية السعودية">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== PORTFOLIO SECTION ==================== -->
+                <div class="section-panel" id="panel-portfolio">
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <div class="stat-card-icon blue"><i class="fas fa-images"></i></div>
+                            <div class="stat-card-info">
+                                <h4 id="totalPortfolio">0</h4>
+                                <span>إجمالي الأعمال</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="items-grid" id="portfolioGrid">
+                        <!-- Portfolio items rendered here by JS -->
+                    </div>
+
+                    <button class="add-item-btn" onclick="openPortfolioModal()">
+                        <i class="fas fa-plus"></i>
+                        <span>إضافة عمل جديد</span>
+                    </button>
+                </div>
+
+                <!-- ==================== SERVICES SECTION ==================== -->
+                <div class="section-panel" id="panel-services">
+                    <div class="items-grid" id="servicesGrid">
+                        <!-- Service items rendered here by JS -->
+                    </div>
+
+                    <button class="add-item-btn" onclick="openServiceModal()">
+                        <i class="fas fa-plus"></i>
+                        <span>إضافة قسم خدمة جديد</span>
+                    </button>
+                </div>
+
+                <!-- ==================== CLIENTS SECTION ==================== -->
+                <div class="section-panel" id="panel-clients">
+                    <div class="items-grid" id="clientsGrid">
+                        <!-- Client logos rendered here by JS -->
+                    </div>
+
+                    <button class="add-item-btn" onclick="openClientModal()">
+                        <i class="fas fa-plus"></i>
+                        <span>إضافة شعار عميل جديد</span>
+                    </button>
+                </div>
+
+                <!-- ==================== TESTIMONIALS SECTION ==================== -->
+                <div class="section-panel" id="panel-testimonials">
+                    <div class="items-grid" id="testimonialsGrid">
+                        <!-- Testimonial items rendered here by JS -->
+                    </div>
+
+                    <button class="add-item-btn" onclick="openTestimonialModal()">
+                        <i class="fas fa-plus"></i>
+                        <span>إضافة رأي عميل جديد</span>
+                    </button>
+                </div>
+
+                <!-- ==================== CONTACT SECTION ==================== -->
+                <div class="section-panel" id="panel-contact">
+                    <div class="admin-card">
+                        <h3><i class="fas fa-envelope"></i> بيانات التواصل الرئيسية</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>البريد الإلكتروني</label>
+                                <input type="email" id="contactEmail" placeholder="email@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label>رقم الجوال</label>
+                                <input type="tel" id="contactPhone" placeholder="+966533318875">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>رابط واتساب</label>
+                                <input type="url" id="contactWhatsapp" placeholder="https://wa.me/966533318875">
+                            </div>
+                            <div class="form-group">
+                                <label>الموقع الجغرافي</label>
+                                <input type="text" id="contactLocation" placeholder="المملكة العربية السعودية">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="admin-card">
+                        <h3><i class="fas fa-share-alt"></i> روابط التواصل الاجتماعي</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fab fa-twitter" style="color:#1DA1F2;margin-left:6px;"></i>
+                                    تويتر/X</label>
+                                <input type="url" id="socialTwitter" placeholder="https://twitter.com/...">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fab fa-instagram" style="color:#E4405F;margin-left:6px;"></i>
+                                    انستقرام</label>
+                                <input type="url" id="socialInstagram" placeholder="https://instagram.com/...">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fab fa-linkedin" style="color:#0A66C2;margin-left:6px;"></i>
+                                    لينكدإن</label>
+                                <input type="url" id="socialLinkedin" placeholder="https://linkedin.com/in/...">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fab fa-behance" style="color:#1769FF;margin-left:6px;"></i>
+                                    بيهانس</label>
+                                <input type="url" id="socialBehance" placeholder="https://behance.net/...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== SETTINGS SECTION ==================== -->
+                <div class="section-panel" id="panel-settings">
+                    <div class="admin-card">
+                        <h3><i class="fas fa-palette"></i> إعدادات عامة</h3>
+                        <div class="form-group" style="margin-bottom:20px;">
+                            <label>نص الفوتر</label>
+                            <input type="text" id="footerText" placeholder="نحول أفكارك إلى واقع إبداعي">
+                        </div>
+                        <div class="form-group">
+                            <label>عنوان CTA في صفحة الخدمات</label>
+                            <input type="text" id="servicesCta" placeholder="هل لديك مشروع تحتاج تنفيذه؟">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ==================== MODALS ==================== -->
+
+    <!-- Portfolio Modal -->
+    <div class="modal-overlay" id="portfolioModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="portfolioModalTitle">إضافة عمل جديد</h3>
+                <button class="modal-close" onclick="closeModal('portfolioModal')"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="portfolioEditId">
+                <div class="form-group" style="margin-bottom:20px;">
+                    <label>عنوان العمل</label>
+                    <input type="text" id="portfolioTitle" placeholder="اسم المشروع">
+                </div>
+                <div class="form-group" style="margin-bottom:20px;">
+                    <label>وصف مختصر</label>
+                    <textarea id="portfolioDesc" rows="3" placeholder="وصف العمل..."></textarea>
+                </div>
+                <div class="form-row" style="margin-bottom:20px;">
+                    <div class="form-group">
+                        <label>الفئة</label>
+                        <select id="portfolioCategory">
+                            <option value="design">تصميم</option>
+                            <option value="montage">مونتاج</option>
+                            <option value="motion">موشن جرافيك</option>
+                            <option value="websites">مواقع</option>
+                            <option value="photography">تصوير</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>الترتيب</label>
+                        <input type="number" id="portfolioOrder" placeholder="1" min="0">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-bottom:20px;">
+                    <label>الأدوات المستخدمة</label>
+                    <div class="tags-container" id="portfolioToolsContainer">
+                        <input type="text" class="tags-input" id="portfolioToolsInput"
+                            placeholder="اكتب أداة واضغط Enter...">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>صورة العمل</label>
+                    <div class="image-upload" id="portfolioImageUpload">
+                        <img class="preview-img" id="portfolioImagePreview" style="display:none;">
+                        <i class="fas fa-cloud-upload-alt" id="portfolioUploadIcon"></i>
+                        <p>اسحب الصورة هنا أو اضغط للاختيار</p>
+                        <small>PNG, JPG, WEBP</small>
+                        <input type="file" accept="image/*" id="portfolioImageInput">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-top:20px;">
+                    <label>فيديو العمل (اختياري)</label>
+                    <div class="image-upload" id="portfolioVideoUpload">
+                        <video class="preview-video" id="portfolioVideoPreview"
+                            style="display:none;max-height:200px;width:100%;border-radius:8px;" controls></video>
+                        <i class="fas fa-video" id="portfolioVideoIcon"></i>
+                        <p>اسحب الفيديو هنا أو اضغط للاختيار</p>
+                        <small>MP4, MOV, WEBM</small>
+                        <input type="file" accept="video/*" id="portfolioVideoInput">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="topbar-btn btn-save" onclick="savePortfolioItem()">
+                    <i class="fas fa-save"></i> حفظ
+                </button>
+                <button class="btn-cancel" onclick="closeModal('portfolioModal')">إلغاء</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Modal -->
+    <div class="modal-overlay" id="serviceModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="serviceModalTitle">إضافة قسم خدمة</h3>
+                <button class="modal-close" onclick="closeModal('serviceModal')"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="serviceEditId">
+                <div class="form-row" style="margin-bottom:20px;">
+                    <div class="form-group">
+                        <label>اسم القسم</label>
+                        <input type="text" id="serviceTitle" placeholder="فريق التصميم">
+                    </div>
+                    <div class="form-group">
+                        <label>أيقونة (Font Awesome class)</label>
+                        <input type="text" id="serviceIcon" placeholder="fas fa-palette" dir="ltr">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-bottom:20px;">
+                    <label>المهارات</label>
+                    <div class="tags-container" id="serviceSkillsContainer">
+                        <input type="text" class="tags-input" id="serviceSkillsInput"
+                            placeholder="اكتب مهارة واضغط Enter...">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-bottom:20px;">
+                    <label>فئة الأعمال المرتبطة</label>
+                    <select id="serviceCategory">
+                        <option value="design">تصميم</option>
+                        <option value="montage">مونتاج</option>
+                        <option value="motion">موشن جرافيك</option>
+                        <option value="websites">مواقع</option>
+                        <option value="photography">تصوير</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>الترتيب</label>
+                    <input type="number" id="serviceOrder" placeholder="1" min="0">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="topbar-btn btn-save" onclick="saveServiceItem()">
+                    <i class="fas fa-save"></i> حفظ
+                </button>
+                <button class="btn-cancel" onclick="closeModal('serviceModal')">إلغاء</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Client Modal -->
+    <div class="modal-overlay" id="clientModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="clientModalTitle">إضافة شعار عميل</h3>
+                <button class="modal-close" onclick="closeModal('clientModal')"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="clientEditId">
+                <div class="form-group" style="margin-bottom:20px;">
+                    <label>اسم العميل</label>
+                    <input type="text" id="clientName" placeholder="اسم الشركة أو الجهة">
+                </div>
+                <div class="form-group" style="margin-bottom:20px;">
+                    <label>الترتيب</label>
+                    <input type="number" id="clientOrder" placeholder="1" min="0">
+                </div>
+                <div class="form-group">
+                    <label>شعار العميل</label>
+                    <div class="image-upload" id="clientImageUpload">
+                        <img class="preview-img" id="clientImagePreview" style="display:none;">
+                        <i class="fas fa-cloud-upload-alt" id="clientUploadIcon"></i>
+                        <p>اسحب الصورة هنا أو اضغط للاختيار</p>
+                        <small>PNG, JPG, WEBP, SVG</small>
+                        <input type="file" accept="image/*" id="clientImageInput">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="topbar-btn btn-save" onclick="saveClientItem()">
+                    <i class="fas fa-save"></i> حفظ
+                </button>
+                <button class="btn-cancel" onclick="closeModal('clientModal')">إلغاء</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonial Modal -->
+    <div class="modal-overlay" id="testimonialModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="testimonialModalTitle">إضافة رأي عميل</h3>
+                <button class="modal-close" onclick="closeModal('testimonialModal')"><i
+                        class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="testimonialEditId">
+                <div class="form-group" style="margin-bottom:20px;">
+                    <label>المنصب واسم الشركة</label>
+                    <input type="text" id="testimonialPosition" placeholder="مثال: مدير التسويق - شركة ABC">
+                </div>
+                <div class="form-group" style="margin-bottom:20px;">
+                    <label>الترتيب</label>
+                    <input type="number" id="testimonialOrder" placeholder="1" min="0">
+                </div>
+                <div class="form-group">
+                    <label>المقطع الصوتي</label>
+                    <div class="image-upload" id="testimonialAudioUpload">
+                        <audio id="testimonialAudioPreview" style="display:none;width:100%;" controls></audio>
+                        <i class="fas fa-microphone" id="testimonialAudioIcon"
+                            style="font-size:2rem;color:var(--accent);"></i>
+                        <p>اسحب الملف الصوتي هنا أو اضغط للاختيار</p>
+                        <small>MP3, WAV, OGG, M4A</small>
+                        <input type="file" accept="audio/*" id="testimonialAudioInput">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="topbar-btn btn-save" onclick="saveTestimonialItem()">
+                    <i class="fas fa-save"></i> حفظ
+                </button>
+                <button class="btn-cancel" onclick="closeModal('testimonialModal')">إلغاء</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation -->
+    <div class="confirm-overlay" id="confirmDelete">
+        <div class="confirm-box">
+            <i class="fas fa-exclamation-triangle"></i>
+            <h3>تأكيد الحذف</h3>
+            <p>هل أنت متأكد من حذف هذا العنصر؟ لا يمكن التراجع عن هذا الإجراء.</p>
+            <div class="confirm-actions">
+                <button class="btn-confirm-delete" id="confirmDeleteBtn">نعم، احذف</button>
+                <button class="btn-cancel" onclick="closeConfirm()">إلغاء</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Admin JS -->
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

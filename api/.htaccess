@@ -1,0 +1,5 @@
+# Protect setup file after first run
+<Files "setup.php">
+    Order Deny,Allow
+    Deny from all
+</Files>
