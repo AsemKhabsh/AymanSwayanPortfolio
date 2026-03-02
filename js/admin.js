@@ -171,7 +171,6 @@ function clearTags(containerId) {
 }
 
 setupTagsInput('typingTextsContainer', 'typingInput');
-setupTagsInput('portfolioToolsContainer', 'portfolioToolsInput');
 setupTagsInput('serviceSkillsContainer', 'serviceSkillsInput');
 
 // ==================== IMAGE TO BASE64 ====================
@@ -370,13 +369,9 @@ async function loadPortfolioData() {
 function openPortfolioModal() {
     document.getElementById('portfolioEditId').value = '';
     document.getElementById('portfolioTitle').value = '';
-    document.getElementById('portfolioDesc').value = '';
-    document.getElementById('portfolioCategory').value = 'design';
-    document.getElementById('portfolioOrder').value = '';
     document.getElementById('portfolioImagePreview').style.display = 'none';
     document.getElementById('portfolioUploadIcon').style.display = '';
     document.getElementById('portfolioImageInput').value = '';
-    clearTags('portfolioToolsContainer');
     document.getElementById('portfolioModalTitle').textContent = 'إضافة عمل جديد';
     openModal('portfolioModal');
 }
@@ -387,12 +382,6 @@ function editPortfolioItem(id) {
 
     document.getElementById('portfolioEditId').value = id;
     document.getElementById('portfolioTitle').value = item.title || '';
-    document.getElementById('portfolioDesc').value = item.description || '';
-    document.getElementById('portfolioCategory').value = item.category || 'design';
-    document.getElementById('portfolioOrder').value = item.sort_order || item.order || '';
-
-    clearTags('portfolioToolsContainer');
-    (item.tools || []).forEach(t => addTag(document.getElementById('portfolioToolsContainer'), t));
 
     const imgSrc = item.image_path || item.image || '';
     if (imgSrc) {
@@ -411,10 +400,6 @@ async function savePortfolioItem() {
 
     const data = {
         title: document.getElementById('portfolioTitle').value,
-        description: document.getElementById('portfolioDesc').value,
-        category: document.getElementById('portfolioCategory').value,
-        tools: getTags('portfolioToolsContainer'),
-        order: parseInt(document.getElementById('portfolioOrder').value) || 0,
     };
 
     try {
